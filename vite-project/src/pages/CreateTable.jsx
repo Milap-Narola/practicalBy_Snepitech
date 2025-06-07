@@ -5,7 +5,7 @@ import Pagination from "../components/pagination/Pagination";
 
 const CreateTable = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const { coins, loading } = Data();
+  const { coins, loading } = Data(currentPage);
   const { search } = useLocation();
 
   const query = new URLSearchParams(search).get("search")?.toLowerCase() || "";
