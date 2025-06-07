@@ -1,13 +1,9 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import { Api } from "../config/Api";
 
-const Data = () => {
-  const location = useLocation();
+const Data = (currentPage) => {
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  const queryParams = new URLSearchParams(location.search);
 
   useEffect(() => {
     const fetchCoins = async () => {
@@ -18,7 +14,7 @@ const Data = () => {
             vs_currency: "usd",
             order: "market_cap_desc",
             per_page: 10,
-            page: 1,
+            page: currentPage,
             sparkline: false,
             ...Object.fromEntries(queryParams),
           },
@@ -33,7 +29,7 @@ const Data = () => {
     };
 
     fetchCoins();
-  }, [location.search]);
+  }, [currentPage]);
 
   return { coins, loading };
 };
