@@ -8,6 +8,7 @@ const Pagination = ({ currentPage, hasPrev, hasNext, onPageChange }) => {
       >
         Previous
       </button>
+      <span className="text-gray-700 font-semibold">Page {currentPage}</span>
       <button
         disabled={!hasNext}
         onClick={() => onPageChange(currentPage + 1)}
