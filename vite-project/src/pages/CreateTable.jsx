@@ -29,7 +29,7 @@ const CreateTable = () => {
         <table className="min-w-full bg-white border border-gray-200 rounded-xl shadow-md">
           <thead className="bg-gray-100">
             <tr>
-              <th className="text-left px-4 py-2">#</th>
+              <th className="text-left px-4 py-2">Id</th>
               <th className="text-left px-4 py-2">Coin</th>
               <th className="text-left px-4 py-2">Symbol</th>
               <th className="text-left px-4 py-2">Price (USD)</th>
